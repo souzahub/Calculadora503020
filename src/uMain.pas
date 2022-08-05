@@ -23,6 +23,9 @@ type
     Label10: TLabel;
     Label7: TLabel;
     Label8: TLabel;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
     Procedure FormatarComoMoeda( Componente : TObject; var Key: Char );
     procedure ceTOTALKeyPress(Sender: TObject; var Key: Char);
     procedure Label1MouseMove(Sender: TObject; Shift: TShiftState; X,
@@ -31,6 +34,12 @@ type
       Y: Integer);
     procedure FormShow(Sender: TObject);
     procedure ceTOTALChange(Sender: TObject);
+    procedure Image2MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Image3MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Image4MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
   private
     { Private declarations }
   public
@@ -107,7 +116,29 @@ end;
 procedure TMainForm.Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-Image1.hint := 'Informe seu rendimento mensal.'+#13+'Some seu salário líquido,'+#13+'rendimentos de aluguéis,'+#13+'investimentos ou outras'+#13+'fontes de renda.';
+  Image1.hint := 'Informe seu rendimento mensal.'+#13+'Some seu salário líquido,'+#13+'rendimentos de aluguéis,'+#13+'investimentos ou outras'+#13+'fontes de renda.';
+  Application.HintHidePause := 30000;
+end;
+
+procedure TMainForm.Image2MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  Image2.hint := 'Custos Essenciais são aqueles'+#13+'gastos as quais você não pode evitar.';
+  Application.HintHidePause := 30000;
+end;
+
+procedure TMainForm.Image3MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  Image3.hint := 'Custos pessoais são aqueles gastos com'+#13+'maior flexibilidade. São'+#13+'importantes para você, mas podem ser'+#13+'evitados na hora do aperto.';
+  Application.HintHidePause := 30000;
+end;
+
+procedure TMainForm.Image4MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  Image4.hint := 'Dinheiro direcionado às suas metas'+#13+'financeiras, sobretudo, pagamento'+#13+'de dívidas e poupanças ou investimentos.';
+  Application.HintHidePause := 30000;
 end;
 
 procedure TMainForm.Label1MouseMove(Sender: TObject; Shift: TShiftState; X,
